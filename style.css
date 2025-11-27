@@ -1,0 +1,350 @@
+/* Paleta de Cores: Rosas, Branco, e Neutro */
+:root {
+    --primary-pink: #f48fb1; /* Rosa Principal (Mais Vibrante) */
+    --light-pink: #f8bbd0; /* Rosa Claro (Para detalhes e bordas) */
+    --bg-color: #ffffff; /* Fundo Branco */
+    --text-color: #424242; /* Texto Cinza Escuro */
+    --header-bg: #fff8fb; /* Fundo do Header (Muito Claro/Quase Branco) */
+    --accent-shadow: rgba(244, 143, 177, 0.3); /* Sombra suave do rosa */
+}
+
+/* Base e Tipografia */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header e Navegação */
+header {
+    background-color: var(--header-bg);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra mais destacada */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--primary-pink);
+    letter-spacing: 2px;
+}
+
+nav a {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 2px solid transparent; /* Garante que a linha esteja sempre lá */
+}
+
+nav a:hover, nav a.active {
+    color: var(--primary-pink);
+    border-bottom: 2px solid var(--primary-pink);
+}
+
+/* Conteúdo Principal (Main) */
+main {
+    padding: 50px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-section {
+    margin-bottom: 60px;
+    padding: 20px 0;
+}
+
+h1 {
+    color: var(--primary-pink);
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 50px;
+    color: #616161; /* Cinza médio */
+}
+
+h2 {
+    color: var(--primary-pink);
+    border-bottom: 1px solid var(--light-pink);
+    padding-bottom: 8px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+.section-description {
+    text-align: center;
+    margin-bottom: 30px;
+    font-style: italic;
+    color: #757575;
+}
+
+/* Seção de Destaques/Listas de Serviços */
+.service-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.service-list li {
+    background-color: var(--header-bg);
+    padding: 25px;
+    border-radius: 12px;
+    flex: 1 1 calc(30% - 20px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    min-width: 280px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--light-pink);
+}
+
+.service-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--accent-shadow);
+}
+
+.service-list li strong {
+    color: var(--primary-pink);
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+/* Detalhes de Serviço em outras páginas */
+.service-details {
+    list-style: disc;
+    padding-left: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: block; /* Remove o flexbox para a lista detalhada */
+}
+
+.service-details li {
+    background: none;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    box-shadow: none;
+    border-bottom: 1px dashed var(--light-pink);
+    flex: none;
+}
+
+.service-details li:last-child {
+    border-bottom: none;
+}
+
+
+/* Galeria de Fotos */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    width: 250px; /* Tamanho maior */
+    height: 350px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border: 3px solid var(--light-pink); /* Borda sutil */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Placeholder de Imagem para o usuário final */
+.gallery-item:not(:has(img)) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--header-bg);
+    color: var(--primary-pink);
+    font-style: italic;
+    font-size: 0.9em;
+    padding: 10px;
+}
+
+/* Formulário de Orçamento (WhatsApp) */
+#form-container {
+    background-color: var(--header-bg);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px var(--accent-shadow);
+    margin-top: 60px;
+    border: 2px solid var(--light-pink);
+}
+
+#form-container h2 {
+    text-align: center;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+}
+
+#quote-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"], 
+.form-group input[type="tel"], 
+.form-group input[type="date"], 
+.form-group input[type="time"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--light-pink);
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 5px var(--accent-shadow);
+    outline: none;
+}
+
+/* Checkboxes */
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+.form-group label[for^="check-"] {
+    display: inline-block;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Botão WhatsApp */
+#whatsapp-submit {
+    background-color: #25D366; /* Cor oficial do WhatsApp */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+#whatsapp-submit i {
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+#whatsapp-submit:hover {
+    background-color: #1DA851;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-color);
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.8em;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-pink);
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 15px;
+    }
+    
+    nav a {
+        padding: 8px 10px;
+        margin: 0 3px;
+        font-size: 0.9em;
+    }
+
+    .service-list li {
+        flex: 1 1 100%;
+    }
+
+    .gallery-item {
+        width: 100%;
+        height: 250px;
+    }
+}
